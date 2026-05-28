@@ -12,25 +12,25 @@ export const exercises = {
     reps: 15,
     unit: 'reps',
     category: 'green',
-    description: 'Lie on your back with knees bent, feet flat on the floor hip-width apart. Push through your heels to lift your hips toward the ceiling, squeezing your glutes at the top. Hold for a second, then lower slowly. Keep your core engaged and avoid arching your lower back.',
+    description: 'Stai pe spate cu genunchii indoiti si talpile pe podea. Ridica bazinul pana corpul formeaza o linie dreapta. Strange fesierii sus 2 secunde si coboara lent.',
   },
   'rdl': {
     id: 'rdl',
-    title: 'RDL (Romanian Deadlift)',
+    title: 'RDL',
     sets: 4,
     reps: 12,
     unit: 'reps',
     category: 'green',
-    description: 'Stand with feet hip-width apart, slight bend in your knees. Hinge at the hips pushing them back, keeping your back flat and chest up. Lower your hands along your legs until you feel a stretch in your hamstrings, then drive your hips forward to stand. Keep the weight close to your body throughout.',
+    description: 'Tine ganterele in maini. Genunchii usor indoiti. Impinge soldurile in spate cu spatele drept pana simti intindere in spatele coapsei, apoi revino lent.',
   },
   'fandari': {
     id: 'fandari',
-    title: 'Fandări (Lunges)',
+    title: 'Fandari',
     sets: 3,
     reps: 10,
     unit: 'reps',
     category: 'green',
-    description: 'Stand tall with feet together. Step forward with one leg and lower your hips until both knees are bent at approximately 90 degrees. Your back knee should hover just above the floor. Push through your front heel to return to standing. Alternate legs each rep. Keep your torso upright and core engaged.',
+    description: 'Fa un pas mare in spate si coboara controlat. Impinge in calcaiul piciorului din fata pentru a reveni.',
   },
   'donkey-kicks': {
     id: 'donkey-kicks',
@@ -39,7 +39,7 @@ export const exercises = {
     reps: 15,
     unit: 'reps',
     category: 'green',
-    description: 'Start on all fours with hands under shoulders and knees under hips. Keeping your knee bent at 90 degrees, lift one leg up toward the ceiling, pressing your foot upward. Squeeze your glute at the top without arching your lower back. Lower slowly and repeat. Complete all reps on one side before switching.',
+    description: 'Din pozitia in 4 labe, ridica talpa spre tavan fara sa arcuesti spatele.',
   },
   'wall-sit': {
     id: 'wall-sit',
@@ -48,7 +48,7 @@ export const exercises = {
     reps: 45,
     unit: 'seconds',
     category: 'green',
-    description: 'Stand with your back flat against a wall. Slide down until your thighs are parallel to the floor, knees at 90 degrees. Keep your back pressed into the wall, core tight, and hold the position. Do not rest hands on your thighs. Breathe steadily throughout the hold.',
+    description: 'Sprijina-te cu spatele de perete si coboara pana genunchii sunt la aproximativ 90°. Mentine pozitia.',
   },
   'sumo-squat': {
     id: 'sumo-squat',
@@ -57,7 +57,7 @@ export const exercises = {
     reps: 12,
     unit: 'reps',
     category: 'blue',
-    description: 'Stand with feet wider than shoulder-width, toes pointed out at 45 degrees. Lower your hips straight down, keeping your chest up and knees tracking over your toes. Go as low as you can while maintaining form, then push through your heels to stand. Squeeze your glutes and inner thighs at the top.',
+    description: 'Picioarele mai departate decat soldurile, varfurile usor spre exterior. Coboara drept in jos.',
   },
   'pulsed-squats': {
     id: 'pulsed-squats',
@@ -66,7 +66,7 @@ export const exercises = {
     reps: 20,
     unit: 'reps',
     category: 'blue',
-    description: 'Lower into a squat position with thighs parallel to the floor. Instead of standing fully, pulse up and down a few inches, maintaining tension in your quads and glutes. Stay low throughout the set. Keep your weight in your heels and chest lifted.',
+    description: 'Ramai jos intr-o genuflexiune partiala si fa miscari mici pulsate.',
   },
   'fire-hydrants': {
     id: 'fire-hydrants',
@@ -75,7 +75,7 @@ export const exercises = {
     reps: 15,
     unit: 'reps',
     category: 'blue',
-    description: 'Start on all fours with hands under shoulders, knees under hips. Keeping your knee bent at 90 degrees, lift one leg out to the side until your thigh is parallel to the floor. Hold briefly at the top, squeezing your glute, then lower slowly. Keep your hips level — don\'t lean to the opposite side.',
+    description: 'Din pozitia in 4 labe, ridica genunchiul lateral fara sa rotesti corpul.',
   },
   'side-leg-raises': {
     id: 'side-leg-raises',
@@ -84,7 +84,7 @@ export const exercises = {
     reps: 15,
     unit: 'reps',
     category: 'blue',
-    description: 'Lie on your side with legs stacked and body in a straight line. Lift your top leg toward the ceiling, keeping it straight and leading with your heel. Raise until you feel tension in your outer hip, then lower slowly. Don\'t let your hips roll forward or backward. Complete all reps before switching sides.',
+    description: 'Culcata pe o parte, ridica piciorul de sus lent si controlat.',
   },
   'bridge-hold': {
     id: 'bridge-hold',
@@ -93,16 +93,16 @@ export const exercises = {
     reps: 30,
     unit: 'seconds',
     category: 'blue',
-    description: 'Lie on your back with knees bent and feet flat on the floor. Push your hips up into a bridge position and hold at the top. Squeeze your glutes hard and keep your core braced. Don\'t let your hips sag — maintain a straight line from shoulders to knees throughout the hold.',
+    description: 'Mentine pozitia sus in glute bridge timp de 30 secunde.',
   },
   'squats-lente': {
     id: 'squats-lente',
-    title: 'Squats lente (Slow squats)',
+    title: 'Squats lente',
     sets: 4,
     reps: 12,
     unit: 'reps',
     category: 'green',
-    description: 'Stand with feet shoulder-width apart. Lower into a squat over 3-4 seconds, controlling the descent. Go as deep as comfortable, keeping your chest up and weight in your heels. Pause at the bottom, then rise slowly over 2-3 seconds. The slow tempo increases time under tension for greater muscle activation.',
+    description: 'Coboara lent ca si cum te-ai aseza pe un scaun. Ridica-te apasand in calcaie.',
   },
   'bulgarian-split-squat': {
     id: 'bulgarian-split-squat',
@@ -111,7 +111,7 @@ export const exercises = {
     reps: 10,
     unit: 'reps',
     category: 'green',
-    description: 'Stand a step away from a bench or chair. Place the top of one foot on the surface behind you. Lower your body by bending your front knee until your thigh is parallel to the floor. Your front knee should track over your toes. Push through your front heel to stand. Keep your torso upright throughout.',
+    description: 'Piciorul din spate sprijinit pe un scaun sau canapea. Coboara lent pe piciorul din fata si revino controlat.',
   },
   'step-back-lunges': {
     id: 'step-back-lunges',
@@ -120,7 +120,7 @@ export const exercises = {
     reps: 10,
     unit: 'reps',
     category: 'green',
-    description: 'Stand tall with feet together. Step one foot back and lower your hips until both knees form 90-degree angles. Your back knee should hover just above the floor. Push through your front heel to return to standing. Alternate legs. Keep your torso upright and avoid leaning forward.',
+    description: 'Fa un pas in spate si coboara lent. Revino fara sa te grabesti.',
   },
   'frog-pumps': {
     id: 'frog-pumps',
@@ -129,7 +129,7 @@ export const exercises = {
     reps: 20,
     unit: 'reps',
     category: 'blue',
-    description: 'Lie on your back with the soles of your feet together and knees fallen out to the sides (butterfly position). Push through your feet to lift your hips, squeezing your glutes hard at the top. Lower slowly and repeat. Keep your upper back on the floor and focus on the glute contraction.',
+    description: 'Stai pe spate cu talpile lipite intre ele si genunchii deschisi. Ridica bazinul rapid si controlat.',
   },
   'clamshells': {
     id: 'clamshells',
@@ -138,7 +138,7 @@ export const exercises = {
     reps: 20,
     unit: 'reps',
     category: 'blue',
-    description: 'Lie on your side with knees bent at 45 degrees, feet together, and head resting on your arm. Keeping your feet touching, open your top knee toward the ceiling like a clamshell. Lift as high as possible without rolling your hips backward. Lower slowly with control. Complete all reps before switching sides.',
+    description: 'Pe o parte, genunchii indoiti. Ridica genunchiul de sus fara sa misti bazinul.',
   },
   'bridge-pulses': {
     id: 'bridge-pulses',
@@ -147,7 +147,7 @@ export const exercises = {
     reps: 20,
     unit: 'reps',
     category: 'blue',
-    description: 'Lie on your back with knees bent and feet flat on the floor. Lift your hips into a bridge position. Instead of lowering fully, pulse your hips up and down a few inches, keeping constant tension on your glutes. Stay elevated throughout the set and squeeze at the top of each pulse.',
+    description: 'In pozitia de glute bridge, fa miscari mici pulsate sus.',
   },
 };
 
