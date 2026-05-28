@@ -40,9 +40,9 @@ export default function CalendarView() {
   }
 
   return (
-    <div className="view-enter max-w-lg mx-auto px-4 py-6">
+    <div className="view-enter max-w-lg mx-auto px-4 py-4 min-h-dvh flex flex-col">
       {/* Header with month title and navigation arrows */}
-      <header className="flex items-center justify-between mb-6">
+      <header className="flex items-center justify-between mb-4">
         <button
           onClick={() => setMonthIndex(0)}
           disabled={monthIndex === 0}
@@ -69,7 +69,7 @@ export default function CalendarView() {
       </header>
 
       {/* Weekday column headers */}
-      <div className="grid grid-cols-7 mb-2">
+      <div className="grid grid-cols-7 mb-1">
         {WEEKDAY_LABELS.map(day => (
           <div key={day} className="text-center text-xs font-medium text-slate-500 py-1">
             {day}
@@ -78,7 +78,7 @@ export default function CalendarView() {
       </div>
 
       {/* Calendar grid — 7 columns, variable rows */}
-      <div className="grid grid-cols-7 gap-1">
+      <div className="grid grid-cols-7 gap-1 flex-1">
         {/* Empty cells for days before the 1st of the month */}
         {Array.from({ length: firstDayOffset }).map((_, i) => (
           <div key={`empty-${i}`} className="aspect-square" />
@@ -137,7 +137,7 @@ export default function CalendarView() {
       </div>
 
       {/* Legend */}
-      <div className="flex items-center justify-center gap-4 mt-6 text-xs text-slate-500">
+      <div className="flex items-center justify-center gap-4 mt-3 text-xs text-slate-500">
         <span className="flex items-center gap-1">
           <span className="w-2.5 h-2.5 rounded-full bg-green-500" /> Strength
         </span>

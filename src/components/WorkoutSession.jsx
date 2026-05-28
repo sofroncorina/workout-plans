@@ -47,7 +47,7 @@ export default function WorkoutSession() {
   // --- State ---
   const [currentIndex, setCurrentIndex] = useState(0); // which exercise we're on
   const [phase, setPhase] = useState('exercise'); // 'exercise' | 'rest' | 'complete'
-  const [countdown, setCountdown] = useState(120); // per-exercise: starts at 2:00
+  const [countdown, setCountdown] = useState(300); // per-exercise: starts at 5:00
   const [totalTime, setTotalTime] = useState(0); // total elapsed seconds
   const [isPaused, setIsPaused] = useState(false);
 
@@ -109,7 +109,7 @@ export default function WorkoutSession() {
             // Rest finished — advance to next exercise
             setCurrentIndex(i => i + 1);
             setPhase('exercise');
-            return 120; // Reset to 2:00 for next exercise
+            return 300; // Reset to 5:00 for next exercise
           }
           return 0;
         }
@@ -228,23 +228,23 @@ export default function WorkoutSession() {
         {phase === 'exercise' ? (
           <>
             {/* Exercise title */}
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">
               {currentExercise.title}
             </h2>
 
             {/* Countdown timer — big and prominent */}
-            <div className={`text-6xl font-mono font-bold mb-6 ${countdown <= 10 ? 'text-red-500 animate-pulse' : accentClass}`}>
+            <div className={`text-6xl font-mono font-bold mb-4 ${countdown <= 10 ? 'text-red-500 animate-pulse' : accentClass}`}>
               {formatTime(countdown)}
             </div>
 
             {/* Sets × reps info */}
-            <p className="text-sm text-slate-500 mb-4">
+            <p className="text-sm text-slate-500 mb-3">
               {currentExercise.sets} × {currentExercise.reps} {currentExercise.unit === 'seconds' ? 's' : 'reps'}
             </p>
 
             {/* Form cue description */}
-            <div className="max-h-40 overflow-y-auto px-2">
-              <p className="text-sm text-slate-600 leading-relaxed">
+            <div className="max-h-48 overflow-y-auto px-2">
+              <p className="text-base text-slate-600 leading-relaxed">
                 {currentExercise.description}
               </p>
             </div>
