@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Calendar</title>
+    <script>
+      /*
+        GitHub Pages SPA redirect trick:
+        When a user navigates directly to e.g. /workout-plans/#/day/2026-06-01
+        and GH Pages shows a 404, this page redirects to index.html preserving the hash.
+        Since we use HashRouter, this isn't strictly needed, but it's good insurance.
+      */
+      const path = window.location.pathname;
+      const hash = window.location.hash;
+      window.location.replace(path.replace(/\/[^/]*$/, '/') + (hash || ''));
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
