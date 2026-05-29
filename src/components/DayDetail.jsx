@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { calendar } from '../data/calendar';
 
@@ -22,6 +23,9 @@ export default function DayDetail() {
   const { dateKey } = useParams();
   const navigate = useNavigate();
   const dayData = calendar[dateKey];
+
+  // Track which exercise is expanded (null = show list, index = show detail)
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   // If invalid date or rest day, redirect back
   if (!dayData || dayData.type === 'rest') {
@@ -72,30 +76,61 @@ export default function DayDetail() {
 
       {/* Exercise list */}
       <ol className="space-y-3 mb-8" aria-label="Exercise list">
-        {exercises.map((ex, index) => (
-          <li
-            key={ex.id + '-' + index}
-            className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm border border-slate-100"
-          >
-            {/* Exercise number */}
-            <span
-              className={`
-                flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white
-                ${isGreen ? 'bg-green-500' : 'bg-blue-500'}
-              `}
+        {exercises.map((ex, index) => {
+          const isExpanded = selectedIndex === index;
+          return (
+            <li
+              key={ex.id + '-' + index}
+              className="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden transition-all"
             >
-              {index + 1}
-            </span>
+              {/* Clickable row */}
+              <div
+                onClick={() => setSelectedIndex(isExpanded ? null : index)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter') setSelectedIndex(isExpanded ? null : index); }}
+                className="flex items-center gap-3 p-3 cursor-pointer hover:bg-slate-50 active:scale-[0.98] transition-all"
+              >
+                {/* Exercise number */}
+                <span
+                  className={`
+                    flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white
+                    ${isGreen ? 'bg-green-500' : 'bg-blue-500'}
+                  `}
+                >
+                  {index + 1}
+                </span>
 
-            {/* Exercise info */}
-            <div className="flex-1 min-w-0">
-              <p className="font-medium text-slate-800 truncate">{ex.title}</p>
-              <p className="text-sm text-slate-500">
-                {ex.sets} × {ex.reps} {ex.unit === 'seconds' ? 's' : 'reps'}
-              </p>
-            </div>
-          </li>
-        ))}
+                {/* Exercise info */}
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium text-slate-800 truncate">{ex.title}</p>
+                  <p className="text-sm text-slate-500">
+                    {ex.sets} × {ex.reps} {ex.unit === 'seconds' ? 's' : 'reps'}
+                  </p>
+                </div>
+
+                {/* Expand/collapse chevron */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`w-4 h-4 text-slate-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </div>
+
+              {/* Expanded detail — shown inline below the exercise row */}
+              {isExpanded && (
+                <div className="px-4 pb-4 pt-1 border-t border-slate-100">
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    {ex.description}
+                  </p>
+                </div>
+              )}
+            </li>
+          );
+        })}
       </ol>
 
       {/* Start workout button */}
